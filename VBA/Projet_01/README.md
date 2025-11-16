@@ -1,23 +1,23 @@
-# Projet 1 : Génération de fiches via macros Excel
+# Projet 1 : Automatisation des formulaires ACA
 
 ## Objectif
-Automatiser la création de fiches pour les interventions techniques à partir de données Excel et photos terrain.
+Automatiser la collecte et le traitement des données des formulaires ACA pour améliorer la fiabilité et l’efficacité.
 
 ## Technologies utilisées
-- Excel VBA
-- Word (pour insertion des fiches)
-- Power Query (pour traitement des données si nécessaire)
+- VBA (Excel)
+- PowerShell
+- Planificateur de tâches Windows
 
 ## Étapes et méthodologie
-1. Import des données depuis Excel
-2. Boucle VBA pour remplir les fiches Word
-3. Boucle VBA pour insérer les images correspondantes
-4. Enregistrement automatique des fiches dans le dossier approprié
+1. Création de macros VBA pour copier et sauvegarder les données depuis les fichiers externes
+2. Développement d’un script PowerShell pour exécuter automatiquement les macros
+3. Planification via VM pour exécuter les scripts quotidiennement
 
 ## Captures d'écran
-![Exemple Fiche](screenshots/01_fiche.png)
+![Macro VBA](screenshots/01_macro.png)
+![Script PowerShell](screenshots/02_powershell.png)
 
 ## Résultat
-- Création automatique de fiches structurées
-- Gain de temps considérable
-- Réduction des erreurs de saisie manuelle
+- Réduction des erreurs humaines
+- Automatisation complète du traitement des formulaires
+- Fiabilité et gain de temps significatif
