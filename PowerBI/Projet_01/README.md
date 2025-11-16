@@ -1,7 +1,7 @@
 # Projet 1 : Requêtes Indicateurs de Performance
 
 ## Objectif
-Calculer et visualiser 133 indicateurs de performance pour ASTEO afin de garantir la conformité contractuelle avec Toulouse Métropole.  
+Calculer et visualiser 133 indicateurs de performance pour ASTEO afin de garantir la conformité contractuelle avec Toulouse Métropole.
 
 ## Technologies utilisées
 - Power BI (Power Query, DAX)
