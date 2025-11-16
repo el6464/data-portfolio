@@ -1,18 +1,28 @@
-# Projet Power BI - Dashboard Ventes
+# Projet 1 : Requêtes Indicateurs de Performance
 
 ## Objectif
-Créer un dashboard pour visualiser les ventes mensuelles.
+Calculer et visualiser 133 indicateurs de performance pour ASTEO afin de garantir la conformité contractuelle avec Toulouse Métropole.  
 
-## Technologies
-- Power BI
-- SQL (pour extraire les données)
+## Technologies utilisées
+- Power BI (Power Query, DAX)
+- SQL (PostgreSQL / MySQL selon les données)
+- SharePoint (source des fichiers)
+
+## Données / Sources
+- Entrepôt de Données (EDD)
+- SharePoint
+
+## Étapes et méthodologie
+1. Extraction et traitement des données depuis l’EDD et SharePoint
+2. Intégration dans Power BI via Power Query
+3. Création de requêtes DAX pour calcul des indicateurs
+4. Construction des tableaux de bord dynamiques pour visualisation et suivi en temps réel
 
 ## Captures d'écran
-![exemple_dashboard](screenshots/01_dashboard.png)
+![Exemple Dashboard](screenshots/01_dashboard.png)
 
-## Extrait de code SQL (non réutilisable)
+## Extrait de code (SQL)
 ```sql
 SELECT customer_id, SUM(amount) AS total_ventes
 FROM ventes
 GROUP BY customer_id;
-
