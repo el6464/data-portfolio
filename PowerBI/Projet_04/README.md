@@ -1,4 +1,4 @@
-# Projet 4 : Suivi des lignes dans l’EDD
+# Projet 3 : Suivi des lignes dans l’EDD
 
 ## Objectif
 Surveiller le volume et l’évolution des données dans l’Entrepôt de Données pour garantir leur fiabilité et pertinence.
