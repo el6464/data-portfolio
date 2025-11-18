@@ -14,8 +14,24 @@ Automatiser la collecte et le traitement des données des formulaires ACA pour a
 3. Planification via VM pour exécuter les scripts quotidiennement
 
 ## Captures d'écran
-![Macro VBA](screenshots/01_macro.png)
-![Script PowerShell](screenshots/02_powershell.png)
+Voici les captures du projet :
+
+<p align="center">
+  <img src="screenshots/1.png" width="30%">
+  <img src="screenshots/13.png" width="30%">
+  <img src="screenshots/14.png" width="30%">
+</p>
+
+<p align="center">
+  <img src="screenshots/3.png" width="30%">
+  <img src="screenshots/4.png" width="30%">
+  <img src="screenshots/5.png" width="30%">
+</p>
+
+<p align="center">
+  <img src="screenshots/AA.jpg" width="40%">
+</p>
+
 
 ## Résultat
 - Réduction des erreurs humaines
