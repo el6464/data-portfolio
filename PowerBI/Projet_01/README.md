@@ -19,7 +19,26 @@ Calculer et visualiser 133 indicateurs de performance pour ASTEO afin de garanti
 4. Construction des tableaux de bord dynamiques pour visualisation et suivi en temps réel
 
 ## Captures d'écran
-![Exemple Dashboard](screenshots/01_dashboard.png)
+# Mon Projet PowerBI
+
+Voici les captures du projet :
+
+<p align="center">
+  <img src="screenshots/1.png" width="30%">
+  <img src="screenshots/13.png" width="30%">
+  <img src="screenshots/14.png" width="30%">
+</p>
+
+<p align="center">
+  <img src="screenshots/3.png" width="30%">
+  <img src="screenshots/4.png" width="30%">
+  <img src="screenshots/5.png" width="30%">
+</p>
+
+<p align="center">
+  <img src="screenshots/AA.jpg" width="40%">
+</p>
+
 
 ## Extrait de code (SQL)
 ```sql
