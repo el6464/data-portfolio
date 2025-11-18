@@ -19,7 +19,7 @@ l’environnement, améliorant la performance et la qualité des systèmes d’i
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r)
 ![Matlab](https://img.shields.io/badge/MATLAB-F0F0F0?style=for-the-badge&logo=matlab&logoColor=000000)
 ![Scilab](https://img.shields.io/badge/Scilab-1D5A99?style=for-the-badge)
- **Modélisation prédictive :** Régression, Random Forest, SVM, K-means, LR, Neural Networks…  
+ - **Modélisation prédictive :** Régression, Random Forest, SVM, K-means, LR, Neural Networks…  
  
 ### 📊 Business Intelligence & Reporting
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi)
