@@ -14,8 +14,24 @@ Automatiser la création de fiches pour les interventions techniques à partir d
 3. Boucle VBA pour insérer les images correspondantes
 4. Enregistrement automatique des fiches dans le dossier approprié
 
-## Captures d'écran
-![Exemple Fiche](screenshots/01_fiche.png)
+## Voici les captures du projet :
+
+<p align="center">
+  <img src="screenshots/1.png" width="30%">
+  <img src="screenshots/13.png" width="30%">
+  <img src="screenshots/14.png" width="30%">
+</p>
+
+<p align="center">
+  <img src="screenshots/3.png" width="30%">
+  <img src="screenshots/4.png" width="30%">
+  <img src="screenshots/5.png" width="30%">
+</p>
+
+<p align="center">
+  <img src="screenshots/AA.jpg" width="40%">
+</p>
+
 
 ## Résultat
 - Création automatique de fiches structurées
