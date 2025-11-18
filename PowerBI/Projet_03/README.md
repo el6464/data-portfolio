@@ -1,4 +1,4 @@
-# Projet 3 : Automatisation du diagnostic permanent
+# Projet 2 : Automatisation du diagnostic permanent
 
 ## Objectif
 Créer une solution Power BI pour automatiser le diagnostic permanent (DIAG PERM 21) et obtenir des indicateurs fiables.
