@@ -5,19 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Data-portfolio — Elhadji CISSE</title>
 <style>
-  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; line-height: 1.6; }
-  header { background: #0078D4; color: white; padding: 2rem; text-align: center; }
-  header h1 { margin: 0.2rem 0; }
-  header p { margin: 0.2rem 0; }
-  section { padding: 2rem; max-width: 1200px; margin: auto; }
-  h2 { border-bottom: 2px solid #0078D4; padding-bottom: 0.5rem; }
-  h3 { margin-top: 1rem; }
-  .badges, .projects { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .skill, .project { background: white; padding: 1rem; border-radius: 8px; flex: 1 1 300px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-  .badges img { margin: 0.2rem 0.2rem 0 0; }
+  /* Reset & base */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
   a { color: #0078D4; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  ul { padding-left: 1.5rem; }
+
+  /* Header */
+  header { background: linear-gradient(90deg,#0078D4,#005a9e); color: #fff; padding: 3rem 1rem; text-align: center; }
+  header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  header p { font-size: 1.1rem; margin-bottom: 0.3rem; }
+
+  /* Sections */
+  section { padding: 2rem 1rem; max-width: 1200px; margin: auto; }
+  h2 { border-bottom: 3px solid #0078D4; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: #0078D4; }
+
+  /* Badges */
+  .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+
+  /* Projects Cards */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1rem; }
+  .project-card { background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+  .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+  .project-card h4 { color: #0078D4; margin-bottom: 0.5rem; }
+  .project-card p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .project-card a { font-weight: bold; }
+
+  /* Mémoire Section */
+  .memoire ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .memoire .badges img { margin: 0.2rem; }
+
+  /* Contact */
+  .contact p { margin-bottom: 0.5rem; }
+
+  /* Responsive text */
+  @media(max-width:768px){ header h1{font-size:2rem;} }
 </style>
 </head>
 <body>
@@ -25,12 +48,11 @@
 <header>
   <h1>👋 Bonjour — Portfolio Data & BI</h1>
   <p>Je suis Elhadji CISSE — Data Analyst spécialisé en Business Intelligence, Machine Learning et Datavisualisation.</p>
-  <p>Les fichiers sources complets (PBIX, ACCDB, .twbx, bases de données, jeux de données sensibles...) sont <strong>privés</strong>.</p>
+  <p>Les fichiers sources complets sont <strong>privés</strong>.</p>
 </header>
 
 <section>
   <h2>💼 Compétences principales</h2>
-  
   <h3>🧠 Data Analysis & Machine Learning</h3>
   <div class="badges">
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" alt="Python">
@@ -39,7 +61,7 @@
     <img src="https://img.shields.io/badge/Scilab-1D5A99?style=for-the-badge" alt="Scilab">
   </div>
   <p><strong>Modélisation prédictive :</strong> Régression, Random Forest, SVM, K-means, LR, Neural Networks…</p>
-  
+
   <h3>📊 Business Intelligence & Reporting</h3>
   <div class="badges">
     <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi" alt="Power BI">
@@ -68,91 +90,41 @@
     <img src="https://img.shields.io/badge/Informatica-FF6C00?style=for-the-badge" alt="Informatica">
     <img src="https://img.shields.io/badge/BigQuery-4285F4?style=for-the-badge&logo=google" alt="BigQuery">
   </div>
-
-  <h3>🗺 GIS & Statistics</h3>
-  <div class="badges">
-    <img src="https://img.shields.io/badge/ArcGIS-F57F20?style=for-the-badge&logo=esri" alt="ArcGIS">
-    <img src="https://img.shields.io/badge/QGIS-589632?style=for-the-badge&logo=qgis" alt="QGIS">
-    <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=rstudio" alt="RStudio">
-    <img src="https://img.shields.io/badge/SAS-362E7B?style=for-the-badge&logo=sas" alt="SAS">
-    <img src="https://img.shields.io/badge/Stata-1C4587?style=for-the-badge" alt="Stata">
-    <img src="https://img.shields.io/badge/Scilab-1D5A99?style=for-the-badge" alt="Scilab">
-    <img src="https://img.shields.io/badge/Statistica-FF6600?style=for-the-badge" alt="Statistica">
-  </div>
-
-  <h3>☁️ Cloud & Automatisation</h3>
-  <div class="badges">
-    <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure" alt="Azure">
-    <img src="https://img.shields.io/badge/PowerApps-742774?style=for-the-badge&logo=microsoft-powerapps" alt="PowerApps">
-    <img src="https://img.shields.io/badge/Power_Automate-094AB2?style=for-the-badge&logo=microsoft-power-automate" alt="Power Automate">
-    <img src="https://img.shields.io/badge/BigQuery-4285F4?style=for-the-badge&logo=google" alt="BigQuery">
-    <img src="https://img.shields.io/badge/ERP_SAS-003366?style=for-the-badge" alt="ERP SAS">
-    <img src="https://img.shields.io/badge/PowerShell-012456?style=for-the-badge&logo=powershell" alt="PowerShell">
-    <img src="https://img.shields.io/badge/VBA-862633?style=for-the-badge" alt="VBA">
-  </div>
-
-  <h3>🏗 Gestion de Projet & Collaboration</h3>
-  <div class="badges">
-    <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira" alt="Jira">
-    <img src="https://img.shields.io/badge/Trello-0079BF?style=for-the-badge&logo=trello" alt="Trello">
-    <img src="https://img.shields.io/badge/Teams-6264A7?style=for-the-badge&logo=microsoft-teams" alt="Teams">
-    <img src="https://img.shields.io/badge/SharePoint-0078D4?style=for-the-badge&logo=microsoft-sharepoint" alt="SharePoint">
-    <img src="https://img.shields.io/badge/GanttProject-FF6600?style=for-the-badge" alt="GanttProject">
-  </div>
-
-  <h3>🔧 Gestion de Version & Déploiement</h3>
-  <div class="badges">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub">
-    <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab" alt="GitLab">
-  </div>
 </section>
 
 <section>
   <h2>🗂 Mes Projets</h2>
   
-  <h3>💻 Programmation & Analyse</h3>
   <div class="projects">
-    <div class="project"><h4>Python</h4><p>Scripts et notebooks pour analyses de données et modélisation prédictive.</p><a href="Python/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>R</h4><p>Analyses statistiques et visualisations.</p><a href="R/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>Matlab_Scilab</h4><p>Scripts et modèles scientifiques en Matlab et Scilab.</p><a href="Matlab_Scilab/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>SQL</h4><p>Scripts et requêtes pour bases de données MySQL et PostgreSQL.</p><a href="SQL/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>PostgreSQL</h4><p>Exemples de création et gestion de bases de données.</p><a href="PostgreSQL/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>MySQL</h4><p>Requêtes SQL et gestion de bases MySQL.</p><a href="MySQL/" target="_blank">Accéder au projet</a></div>
-  </div>
-
-  <h3>📊 Business Intelligence & Automatisation</h3>
-  <div class="projects">
-    <div class="project"><h4>Power BI</h4><p>Dashboards interactifs avec analyses BI.</p><a href="Power BI/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>Tableau</h4><p>Dashboards et visualisations avancées.</p><a href="Tableau/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>Power Automates</h4><p>Automatisation des processus métiers.</p><a href="Power Automates/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>PowerShell</h4><p>Scripts d’automatisation et gestion système.</p><a href="PowerShell/" target="_blank">Accéder au projet</a></div>
-    <div class="project"><h4>VBA</h4><p>Macros et automatisations Excel.</p><a href="VBA/" target="_blank">Accéder au projet</a></div>
-  </div>
-
-  <h3>🗺 SIG & Statistiques</h3>
-  <div class="projects">
-    <div class="project"><h4>Statistiques QGIS</h4><p>Analyses spatiales et cartographiques avec QGIS.</p><a href="Statistiques QGIS/" target="_blank">Accéder au projet</a></div>
-  </div>
-
-  <h3>📄 Documents & Mémoire</h3>
-  <div class="projects">
-    <div class="project"><h4>WordPress</h4><p>Projets et développement sur WordPress.</p><a href="WordPres/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>Python</h4><p>Scripts et notebooks pour analyses de données et modélisation prédictive.</p><a href="Python/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>R</h4><p>Analyses statistiques et visualisations.</p><a href="R/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>Matlab_Scilab</h4><p>Scripts et modèles scientifiques en Matlab et Scilab.</p><a href="Matlab_Scilab/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>SQL</h4><p>Scripts et requêtes pour bases de données MySQL et PostgreSQL.</p><a href="SQL/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>PostgreSQL</h4><p>Exemples de création et gestion de bases de données.</p><a href="PostgreSQL/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>MySQL</h4><p>Requêtes SQL et gestion de bases MySQL.</p><a href="MySQL/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>Power BI</h4><p>Dashboards interactifs avec analyses BI.</p><a href="Power BI/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>Tableau</h4><p>Dashboards et visualisations avancées.</p><a href="Tableau/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>Power Automates</h4><p>Automatisation des processus métiers.</p><a href="Power Automates/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>PowerShell</h4><p>Scripts d’automatisation et gestion système.</p><a href="PowerShell/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>VBA</h4><p>Macros et automatisations Excel.</p><a href="VBA/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>Statistiques QGIS</h4><p>Analyses spatiales et cartographiques avec QGIS.</p><a href="Statistiques QGIS/" target="_blank">Accéder au projet</a></div>
+    <div class="project-card"><h4>WordPress</h4><p>Projets et développement sur WordPress.</p><a href="WordPres/" target="_blank">Accéder au projet</a></div>
   </div>
 </section>
 
-<section>
+<section class="memoire">
   <h2>📘 Mémoire de Stage</h2>
   <h3>Développement d'Outils d'Analyse Automatisés en Business Intelligence</h3>
   
   <h4>Objectif</h4>
   <ul>
     <li>Automatiser l'analyse et le traitement des données opérationnelles d'ASTEO.</li>
-    <li>Développer des outils de Business Intelligence (Power BI, Power Automate, VBA, PowerShell).</li>
-    <li>Concevoir des tableaux de bord interactifs et des rapports standardisés.</li>
+    <li>Développer des outils BI (Power BI, Power Automate, VBA, PowerShell).</li>
+    <li>Concevoir des tableaux de bord interactifs et rapports standardisés.</li>
     <li>Améliorer les performances opérationnelles et répondre aux objectifs contractuels d'ASTEO.</li>
   </ul>
   
-  <h4>Contenu du dépôt</h4>
+  <h4>Contenu</h4>
   <ul>
     <li><strong>Mémoire complet :</strong> document privé (Memoire_Stage.pdf)</li>
     <li><strong>README public :</strong> informations générales sur le projet et les travaux réalisés</li>
@@ -183,7 +155,7 @@
   <p><strong>Accéder au README public :</strong> <a href="Mémoire de stage/" target="_blank">Cliquez ici</a></p>
 </section>
 
-<section>
+<section class="contact">
   <h2>📫 Contact</h2>
   <p>LinkedIn : <a href="http://www.linkedin.com/in/ecisse" target="_blank">linkedin.com/in/ecisse</a></p>
   <p>Email : <a href="mailto:elmalick6c@gmail.com">elmalick6c@gmail.com</a></p>
