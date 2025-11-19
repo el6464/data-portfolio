@@ -21,6 +21,13 @@
   h2 { border-bottom: 3px solid #0078D4; padding-bottom: 0.5rem; margin-bottom: 1rem; }
   h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: #0078D4; }
 
+  /* Justify paragraph */
+  .justify-text {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1rem;
+  }
+
   /* Badges */
   .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
 
@@ -40,7 +47,11 @@
   .contact p { margin-bottom: 0.5rem; }
 
   /* Responsive text */
-  @media(max-width:768px){ header h1{font-size:2rem;} }
+  @media(max-width:768px){
+    header h1 { font-size:2rem; }
+    .justify-text { font-size: 0.95rem; }
+    h2 { font-size: 1.5rem; }
+  }
 </style>
 </head>
 <body>
@@ -50,22 +61,16 @@
   <p>Je suis Elhadji CISSE — Data Analyst spécialisé en Business Intelligence, Machine Learning et Datavisualisation.</p>
   <p>Les fichiers sources complets sont <strong>privés</strong>.</p>
 </header>
+
 <section id="presentation" style="background:#e6f0fa; padding:2rem 1rem; border-radius:12px; max-width:1200px; margin:1rem auto;">
  <h2>👤 Présentation</h2>
-<p class="justify-text">
+ <p class="justify-text">
   Analyste Data & BI, je suis <strong>Elhadji CISSE</strong>, spécialisé dans l’exploitation avancée des données, la Business Intelligence,
   la modélisation prédictive et l’automatisation des processus métier. Passionné par la transformation de données brutes en
   informations actionnables, j’accompagne les organisations dans l’optimisation de leurs performances opérationnelles via des
   solutions d’analyse modernes, automatisées et fiables.
-</p>
+ </p>
 
-
-  <p>
-    J’ai mené avec succès des projets dans des secteurs variés — <strong>logistique, agriculture, enseignement supérieur,
-    environnement</strong> — en développant des tableaux de bord interactifs, des modèles prédictifs, des pipelines de données
-    automatisés et des outils décisionnels robustes. Mes interventions ont permis d’améliorer la qualité des données,
-    d’accélérer les reporting, de fiabiliser les indicateurs et d’optimiser les processus métier.
-  </p>.
 </section>
 
 <section>
