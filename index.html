@@ -7,7 +7,16 @@
 <style>
   /* Reset & base */
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+  body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background: #f0f2f5; 
+    color: #333; 
+    line-height: 1.6; 
+    user-select: none; /* Empêche la sélection de texte */
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+  }
   a { color: #0078D4; text-decoration: none; }
   a:hover { text-decoration: underline; }
 
@@ -16,22 +25,15 @@
   header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
   header p { font-size: 1.1rem; margin-bottom: 0.3rem; }
 
-  /* Sections */
+  /* Sections de base */
   section { padding: 2rem 1rem; max-width: 1200px; margin: auto; }
   h2 { border-bottom: 3px solid #0078D4; padding-bottom: 0.5rem; margin-bottom: 1rem; }
   h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: #0078D4; }
 
-  /* Justify paragraph */
-  .justify-text {
-    text-align: justify;
-    text-justify: inter-word;
-    font-size: 1rem;
-  }
+  .justify-text { text-align: justify; text-justify: inter-word; font-size: 1rem; }
 
-  /* Badges */
   .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
 
-  /* Projects Cards */
   .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1rem; }
   .project-card { background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
   .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
@@ -39,18 +41,63 @@
   .project-card p { font-size: 0.95rem; margin-bottom: 0.5rem; }
   .project-card a { font-weight: bold; }
 
-  /* Mémoire Section */
   .memoire ul { padding-left: 1.5rem; margin-bottom: 1rem; }
   .memoire .badges img { margin: 0.2rem; }
 
-  /* Contact */
   .contact p { margin-bottom: 0.5rem; }
 
-  /* Responsive text */
   @media(max-width:768px){
     header h1 { font-size:2rem; }
     .justify-text { font-size: 0.95rem; }
     h2 { font-size: 1.5rem; }
+  }
+
+  /* === Sections Data & Vision : grille 3+3 avec animation === */
+  .sections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px 0;
+  }
+
+  .sections-grid section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
+    opacity: 0; 
+    transform: translateY(30px);
+    cursor: pointer;
+  }
+
+  .sections-grid section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  .sections-grid section h3 {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg,#0078D4,#005a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sections-grid section p { line-height: 1.6; color: #333; }
+
+  @media(max-width:992px){
+    .sections-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media(max-width:600px){
+    .sections-grid { grid-template-columns: 1fr; }
+  }
+
+  .animate.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
 </head>
@@ -66,15 +113,14 @@
  <h2>👤 Présentation</h2>
  <p class="justify-text">
   Analyste Data & BI, je suis <strong>Elhadji CISSE</strong>, spécialisé dans l’exploitation avancée des données, le Machine Learning, la Datavisualisation, la Programmation, la Migration et la gestion des bases de données, la Business Intelligence, la modélisation prédictive et l’automatisation des processus métier.
-   <br> <br> <br> Passionné par la transformation de données brutes en informations actionnables, j’accompagne les organisations dans l’optimisation de leurs performances opérationnelles via des solutions d’analyse modernes, automatisées et fiables.
-</p>
-
-
+  <br><br><br>
+  Passionné par la transformation de données brutes en informations actionnables, j’accompagne les organisations dans l’optimisation de leurs performances opérationnelles via des solutions d’analyse modernes, automatisées et fiables.
+ </p>
 </section>
 
 <section>
   <h2>💼 Compétences principales</h2>
-  <h3>🧠 Data Analysis & Machine Learning</h3>
+<h3>🧠 Data Analysis & Machine Learning</h3>
   <div class="badges">
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" alt="Python">
     <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r" alt="R">
@@ -155,11 +201,11 @@
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
     <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab">
   </div>
+
 </section>
 
 <section>
   <h2>🗂 Mes Projets</h2>
-  
   <div class="projects">
     <div class="project-card"><h4>Python</h4><p>Scripts et notebooks pour analyses de données et modélisation prédictive.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Python" target="_blank">Accéder au projet</a></div>
     <div class="project-card"><h4>R</h4><p>Analyses statistiques et visualisations.</p><a href="https://github.com/el6464/data-portfolio/tree/main/R/" target="_blank">Accéder au projet</a></div>
@@ -176,49 +222,47 @@
     <div class="project-card"><h4>Data Warehouse & VM</h4><p>Architecture décisionnelle et machines virtuelles Azure.</p><a href="https://github.com/el6464/data-portfolio/tree/main/data%20warehouse%20et%20VM" target="_blank">Accéder au projet</a></div>
     <div class="project-card"><h4>WordPress</h4><p>Projets et développement sur WordPress.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Wordpress" target="_blank">Accéder au projet</a></div>
   </div>
+
 </section>
 
 <section class="memoire">
   <h2>📘 Mémoire de Stage</h2>
-  </h4> Sujet : </strong>Développement d'Outils d'Analyse Automatisés en Business Intelligence</strong></h3></h4>
-  
-  <h4>Objectif</h4>
-  <ul>
-    <li>Automatiser l'analyse et le traitement des données opérationnelles d'ASTEO.</li>
-    <li>Développer des outils BI (Power BI, Power Automate, VBA, PowerShell).</li>
-    <li>Concevoir des tableaux de bord interactifs et rapports standardisés.</li>
-    <li>Améliorer les performances opérationnelles et répondre aux objectifs contractuels d'ASTEO.</li>
-  </ul>
-  
-  <h4>Contenu</h4>
-  <ul>
-    <li><strong>Mémoire complet :</strong> document privé (Memoire_Stage.pdf)</li>
-    <li><strong>README public :</strong> informations générales sur le projet et les travaux réalisés</li>
-  </ul>
-  
-  <h4>Technologies et outils utilisés</h4>
-  <div class="badges">
-    <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi" alt="Power BI">
-    <img src="https://img.shields.io/badge/Power_Automate-094AB2?style=for-the-badge&logo=microsoft-power-automate" alt="Power Automate">
-    <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau" alt="Tableau">
-    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql" alt="PostgreSQL">
-    <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server" alt="SQL Server">
-    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql" alt="MySQL">
-    <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure" alt="Azure">
-    <img src="https://img.shields.io/badge/VBA-862633?style=for-the-badge" alt="VBA">
-    <img src="https://img.shields.io/badge/PowerShell-012456?style=for-the-badge&logo=powershell" alt="PowerShell">
-    <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel" alt="Excel">
-    <img src="https://img.shields.io/badge/SharePoint-0078D4?style=for-the-badge&logo=microsoft-sharepoint" alt="SharePoint">
-    <img src="https://img.shields.io/badge/Teams-6264A7?style=for-the-badge&logo=microsoft-teams" alt="Teams">
+  <!-- Contenu mémoire ici -->
+</section>
+
+<section id="data-vision">
+  <h2>🌐 Data, Projets & Vision</h2>
+  <div class="sections-grid">
+    <section class="animate" id="why-data">
+      <h3>💡 Pourquoi je m’intéresse à la data</h3>
+      <p class="justify-text">La data n’est pas seulement un ensemble de chiffres…</p>
+    </section>
+
+    <section class="animate" id="projects-approach">
+      <h3>🛠 Mes projets et ma manière d’aborder un projet</h3>
+      <p class="justify-text">Chaque projet que je crée est une expérience unique…</p>
+    </section>
+
+    <section class="animate" id="philosophy-values">
+      <h3>🌱 Ma philosophie et mes valeurs</h3>
+      <p class="justify-text">Je crois que le travail le plus impactant naît de l’intention et de la rigueur…</p>
+    </section>
+
+    <section class="animate" id="storyline-code">
+      <h3>📜 Mon histoire en une ligne de code</h3>
+      <p class="justify-text">Mon parcours pourrait se résumer comme une boucle d’apprentissage constante…</p>
+    </section>
+
+    <section class="animate" id="vision-future">
+      <h3>🔭 Ma vision et vers où je veux aller</h3>
+      <p class="justify-text">Je souhaite évoluer dans un univers où la data et l’IA coexistent avec l’intuition humaine…</p>
+    </section>
+
+    <section class="animate" id="future-ai">
+      <h3>🤖 Le futur de la data et de l’IA</h3>
+      <p class="justify-text">L’IA ne remplacera pas les professionnels de la data, elle les augmentera…</p>
+    </section>
   </div>
-  
-  <h4>Remarques</h4>
-  <ul>
-    <li>Les fichiers sources confidentiels d'ASTEO ne sont pas inclus pour respecter la confidentialité.</li>
-    <li>Le PDF du mémoire est privé et ne sera partagé qu'avec les personnes autorisées.</li>
-  </ul>
-  
-  <p><strong>Accéder au README public :</strong> <a href="https://github.com/el6464/data-portfolio/tree/main/M%C3%A9moire%20de%20stage/M%C3%A9moire" target="_blank">Cliquez ici</a></p>
 </section>
 
 <section class="contact">
@@ -226,6 +270,35 @@
   <p>LinkedIn : <a href="http://www.linkedin.com/in/ecisse" target="_blank">linkedin.com/in/ecisse</a></p>
   <p>Email : <a href="mailto:elmalick6c@gmail.com">elmalick6c@gmail.com</a></p>
 </section>
+
+<script>
+// Animation au scroll : fade-in + slide-up
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{ threshold: 0.2 });
+
+document.querySelectorAll('.animate').forEach(section => {
+  observer.observe(section);
+});
+
+// Bloquer le clic droit
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  alert("Le copier-coller n'est pas autorisé sur ce site.");
+});
+
+// Bloquer Ctrl+C et Ctrl+X
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && (e.key === 'c' || e.key === 'x')) {
+    e.preventDefault();
+    alert("Le copier-coller n'est pas autorisé sur ce site.");
+  }
+});
+</script>
 
 </body>
 </html>
