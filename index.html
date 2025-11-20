@@ -1,70 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Portfolio Data-portfolio — Elhadji CISSE</title>
 <style>
-  /* 📱 MOBILE & TABLETTE — Optimisation premium */
-@media(max-width: 992px) {
-  /* 3 sections -> 2 colonnes */
-  .sections-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 18px !important;
-  }
-}
-
-@media(max-width: 768px) {
-  /* 3 sections + 2 sections : 1 colonne */
-  .sections-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-  }
-
-  /* Meilleure lisibilité sur mobile */
-  .sections-grid section {
-    padding: 18px !important;
-  }
-
-  /* Titres centrés */
-  .sections-grid section h3 {
-    text-align: center;
-    font-size: 1.05rem;
-  }
-
-  /* Texte légèrement réduit */
-  .sections-grid section p {
-    font-size: 0.95rem;
-  }
-
-  /* Réduction espace entre les groupes */
-  #data-vision-2 .sections-grid {
-    margin-top: 10px !important;
-  }
-
-  /* Section storytelling ajustée */
-  #storytelling {
-    padding: 25px !important;
-    margin: 1.5rem 0.8rem !important;
-  }
-}
-
-/* Très petits écrans (téléphones anciens) */
-@media(max-width: 480px) {
-  .sections-grid section {
-    padding: 15px !important;
-  }
-
-  header h1 {
-    font-size: 1.7rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-}
-
-  /* Reset & base */
+  /* Reset & base (Style original — Option A : conservation du design) */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { 
     font-family: 'Segoe UI', Arial, sans-serif; 
@@ -80,11 +21,37 @@
   a:hover { text-decoration: underline; }
 
   /* Header */
-  header { background: linear-gradient(90deg,#0078D4,#005a9e); color: #fff; padding: 3rem 1rem; text-align: center; }
+  header { background: linear-gradient(90deg,#0078D4,#005a9e); color: #fff; padding: 3rem 1rem 2rem; text-align: center; position: relative; }
   header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
   header p { font-size: 1.1rem; margin-bottom: 0.3rem; }
 
+  /* Navigation (sticky) */
+  .navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    z-index: 1000;
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.7rem 1rem;
+    list-style: none;
+    margin: 0;
+  }
+  .navbar a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0078D4;
+    transition: 0.18s;
+  }
+  .navbar a:hover { color: #005a9e; }
+
   /* Sections de base */
+  main { max-width: 1200px; margin: 0 auto; padding: 1rem; }
   section { padding: 2rem 1rem; max-width: 1200px; margin: auto; }
   h2 { border-bottom: 3px solid #0078D4; padding-bottom: 0.5rem; margin-bottom: 1rem; }
   h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: #0078D4; }
@@ -105,13 +72,7 @@
 
   .contact p { margin-bottom: 0.5rem; }
 
-  @media(max-width:768px){
-    header h1 { font-size:2rem; }
-    .justify-text { font-size: 0.95rem; }
-    h2 { font-size: 1.5rem; }
-  }
-
-  /* === Sections Data & Vision : grille 3+3 avec animation === */
+  /* Sections Data & Vision cards */
   .sections-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -125,7 +86,7 @@
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
-    opacity: 0; 
+    opacity: 0;
     transform: translateY(30px);
     cursor: pointer;
   }
@@ -139,7 +100,7 @@
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     background: linear-gradient(90deg,#0078D4,#005a9e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -147,17 +108,61 @@
 
   .sections-grid section p { line-height: 1.6; color: #333; }
 
+  /* Storytelling full-width card */
+  #storytelling {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    background: #ffffff;
+    padding: 36px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  #storytelling h2 {
+    text-align: center; border: none; font-size: 1.9rem;
+    background: linear-gradient(90deg,#0078D4,#005a9e);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  #storytelling .justify-text { margin-top: 18px; font-size: 1.03rem; }
+
+  /* Small responsive tweaks (preserve original look) */
   @media(max-width:992px){
     .sections-grid { grid-template-columns: repeat(2, 1fr); }
   }
-  @media(max-width:600px){
-    .sections-grid { grid-template-columns: 1fr; }
+  /* Mobile: force single column and improve spacing */
+  @media(max-width:768px){
+    header h1 { font-size:2rem; }
+    .justify-text { font-size: 0.95rem; }
+    h2 { font-size: 1.5rem; }
+
+    .sections-grid {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+    }
+    .sections-grid section {
+      padding: 16px !important;
+    }
+    .sections-grid section h3 {
+      text-align: center;
+      font-size: 1.02rem;
+    }
+    .sections-grid section p { font-size: 0.96rem; }
+
+    #storytelling {
+      padding: 22px !important;
+      margin: 1.5rem 0.8rem !important;
+    }
+  }
+  @media(max-width:480px){
+    .sections-grid section { padding: 14px !important; }
+    header h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.3rem; }
   }
 
-  .animate.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* show animation */
+  .animate.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -168,295 +173,295 @@
   <p>Les fichiers sources complets sont <strong>privés</strong>.</p>
 </header>
 
-<section id="presentation" style="background:#e6f0fa; padding:2rem 1rem; border-radius:12px; max-width:1200px; margin:1rem auto;">
- <h2>👤 Présentation</h2>
- <p class="justify-text">
-  Analyste Data & BI, je suis <strong>Elhadji CISSE</strong>, spécialisé dans l’exploitation avancée des données, le Machine Learning, la Datavisualisation, la Programmation, la Migration et la gestion des bases de données, la Business Intelligence, la modélisation prédictive et l’automatisation des processus métier.
-  <br><br>
-  Passionné par la transformation de données brutes en informations actionnables, j’accompagne les organisations dans l’optimisation de leurs performances opérationnelles via des solutions d’analyse modernes, automatisées et fiables.
- </p>
-    <section id="storytelling" class="animate" 
-style="max-width:900px; margin:3rem auto; background:white; padding:40px; border-radius:14px; 
-box-shadow:0 10px 25px rgba(0,0,0,0.12);">
+<!-- Navigation -->
+<nav class="navbar" aria-label="Navigation principale">
+  <ul>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#data-vision">Data & Vision</a></li>
+    <li><a href="#realisations">Mes réalisations</a></li>
+  </ul>
+</nav>
 
-  <h2 style="text-align:center; border:none; font-size:1.9rem; 
-      background: linear-gradient(90deg,#0078D4,#005a9e);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
-      📜 Mon histoire en une ligne de code
-  </h2>
+<main>
 
-  <p class="justify-text" style="margin-top:20px; font-size:1.05rem;">
-    Si je devais résumer mon parcours en une seule ligne de code, ce serait :  
-    <strong><em>while (monde_donnees évolue) { apprendre(); analyser(); automatiser(); optimiser(); }</em></strong>  
-    <br><br>
-    De mes débuts dans l’analyse agricole au sein de la SAED, où j’ai appris à transformer la terre et les chiffres 
-    en décisions concrètes, jusqu’à mes missions en enseignement supérieur, en logistique chez DHL, en environnement chez SUEZ 
-    et en consulting indépendant via MALT, une constante est restée :  
-    <br>
-    transformer la complexité en clarté, et les systèmes imparfaits en solutions performantes.  
-    <br>
-    Mon code raconte un chemin fait de migrations de données, de tableaux de bord à 133 KPI avec Power BI, d’automatisations sur Power Automate, Python 
-    PowerShell et VBA, d’optimisations SQL, de data warehouses, de prédiction, de VM Azure, d’ODBC, de QGIS, de macros, de modèles ML 
-    et d’architectures BI.  
-    <br>
-    Mais surtout, il raconte un développeur qui n’a jamais arrêté de boucler sur la même instruction :  
-    <strong><em>devenir meilleur que la veille.</em></strong>
-</section>
-
-<section>
-  <h2>💼 Compétences principales</h2>
-<h3>🧠 Data Analysis & Machine Learning</h3>
-  <div class="badges">
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" alt="Python">
-    <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r" alt="R">
-    <img src="https://img.shields.io/badge/MATLAB-F0F0F0?style=for-the-badge&logo=matlab&logoColor=000000" alt="Matlab">
-    <img src="https://img.shields.io/badge/Scilab-1D5A99?style=for-the-badge" alt="Scilab">
-  </div>
-  <p><strong>Modélisation prédictive :</strong> Régression, Random Forest, SVM, K-means, LR, Neural Networks…</p>
-
-  
-  <!-- Business Intelligence & Reporting -->
-  <h3>📊 Business Intelligence & Reporting</h3>
-  <div class="skills badges">
-    <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi">
-    <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau">
-    <img src="https://img.shields.io/badge/Qlik-74CBC4?style=for-the-badge&logo=qlik">
-    <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel">
-    <img src="https://img.shields.io/badge/Google_Analytics-FBBC05?style=for-the-badge&logo=google-analytics">
-    <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana">
-    <img src="https://img.shields.io/badge/DAX-0078D4?style=for-the-badge">
-    <img src="https://img.shields.io/badge/Power_Query-0078D4?style=for-the-badge">
-    <img src="https://img.shields.io/badge/Power_Pivot-0078D4?style=for-the-badge">
-  </div>
-
-  <!-- Databases & ETL -->
-  <h3>🗄 Bases de données & ETL</h3>
-  <div class="skills badges">
-    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql">
-    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql">
-    <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server">
-    <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb">
-    <img src="https://img.shields.io/badge/Microsoft_Access-A4373A?style=for-the-badge&logo=microsoft-access">
-    <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb">
-    <img src="https://img.shields.io/badge/SAP-0FAAFF?style=for-the-badge&logo=sap">
-    <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle">
-    <img src="https://img.shields.io/badge/Snowflake-28A0E5?style=for-the-badge&logo=snowflake">
-    <img src="https://img.shields.io/badge/Talend-FF6A00?style=for-the-badge">
-    <img src="https://img.shields.io/badge/Informatica-FF6C00?style=for-the-badge">
-    <img src="https://img.shields.io/badge/BigQuery-4285F4?style=for-the-badge&logo=google">
-  </div>
-
-  <!-- GIS & Statistics -->
-  <h3>🗺 SIG & Statistiques</h3>
-  <div class="skills badges">
-    <img src="https://img.shields.io/badge/ArcGIS-F57F20?style=for-the-badge&logo=esri">
-    <img src="https://img.shields.io/badge/QGIS-589632?style=for-the-badge&logo=qgis">
-    <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=rstudio">
-    <img src="https://img.shields.io/badge/SAS-362E7B?style=for-the-badge&logo=sas">
-    <img src="https://img.shields.io/badge/Stata-1C4587?style=for-the-badge">
-    <img src="https://img.shields.io/badge/Scilab-1D5A99?style=for-the-badge">
-    <img src="https://img.shields.io/badge/Statistica-FF6600?style=for-the-badge">
-  </div>
-
-  <!-- Cloud & Automation -->
-  <h3>☁️ Cloud & Automatisation</h3>
-  <div class="skills badges">
-    <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure">
-    <img src="https://img.shields.io/badge/Power_Apps-742774?style=for-the-badge&logo=microsoft-powerapps">
-    <img src="https://img.shields.io/badge/Power_Automate-094AB2?style=for-the-badge&logo=microsoft-power-automate">
-    <img src="https://img.shields.io/badge/BigQuery-4285F4?style=for-the-badge&logo=google">
-    <img src="https://img.shields.io/badge/ERP_SAS-003366?style=for-the-badge">
-    <img src="https://img.shields.io/badge/PowerShell-012456?style=for-the-badge&logo=powershell">
-    <img src="https://img.shields.io/badge/VBA-862633?style=for-the-badge">
-  </div>
-
-  <!-- Project Management -->
-  <h3>🏗 Gestion de Projet & Collaboration</h3>
-  <div class="skills badges">
-    <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira">
-    <img src="https://img.shields.io/badge/Trello-0079BF?style=for-the-badge&logo=trello">
-    <img src="https://img.shields.io/badge/Microsoft_Teams-6264A7?style=for-the-badge&logo=microsoft-teams">
-    <img src="https://img.shields.io/badge/SharePoint-0078D4?style=for-the-badge&logo=microsoft-sharepoint">
-    <img src="https://img.shields.io/badge/GanttProject-FF6600?style=for-the-badge">
-  </div>
-
-  <!-- Version Control -->
-  <h3>🔧 Gestion de version & Déploiement</h3>
-  <div class="skills badges">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
-    <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab">
-  </div>
-
-</section>
-
-<section>
-  <h2>🗂 Mes Projets</h2>
-  <div class="projects">
-    <div class="project-card"><h4>Python</h4><p>Scripts et notebooks pour analyses de données et modélisation prédictive.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Python" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>R</h4><p>Analyses statistiques et visualisations.</p><a href="https://github.com/el6464/data-portfolio/tree/main/R/" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>Matlab_Scilab</h4><p>Scripts et modèles scientifiques en Matlab et Scilab.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Matlab_Scilab/" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>SQL</h4><p>Scripts et requêtes pour bases de données MySQL et PostgreSQL.</p><a href="https://github.com/el6464/data-portfolio/tree/main/SQL" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>PostgreSQL</h4><p>Exemples de création et gestion de bases de données.</p><a href="https://github.com/el6464/data-portfolio/tree/main/PostgreSQL" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>MySQL</h4><p>Requêtes SQL et gestion de bases MySQL.</p><a href="https://github.com/el6464/data-portfolio/tree/main/MySQL" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>Power BI</h4><p>Dashboards interactifs avec analyses BI.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Power BI" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>Tableau</h4><p>Dashboards et visualisations avancées.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Tableau" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>Power Automates</h4><p>Automatisation des processus métiers.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Power Automates" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>PowerShell</h4><p>Scripts d’automatisation et gestion système.</p><a href="https://github.com/el6464/data-portfolio/tree/main/PowerShell" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>VBA</h4><p>Macros et automatisations Excel.</p><a href="https://github.com/el6464/data-portfolio/tree/main/VBA" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>Statistiques QGIS</h4><p>Analyses spatiales et cartographiques avec QGIS.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Statistiques QGIS" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>Data Warehouse & VM</h4><p>Architecture décisionnelle et machines virtuelles Azure.</p><a href="https://github.com/el6464/data-portfolio/tree/main/data%20warehouse%20et%20VM" target="_blank">Accéder au projet</a></div>
-    <div class="project-card"><h4>WordPress</h4><p>Projets et développement sur WordPress.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Wordpress" target="_blank">Accéder au projet</a></div>
-  </div>
-
-
-
-</section>
-
-<section id="data-vision">
-  <h2>🌐 Data, Projets & Vision</h2>
-
-  <div class="sections-grid" style="grid-template-columns: repeat(3, 1fr);">
-
-    <section class="animate">
-      <h3>💡 Pourquoi je m’intéresse à la data</h3>
+  <!-- ACCUEIL : Présentation + Mon histoire (storytelling pleine largeur) -->
+  <section id="accueil" aria-label="Accueil">
+    <div style="background:#e6f0fa; padding:2rem 1rem; border-radius:12px;">
+      <h2>👤 Présentation</h2>
       <p class="justify-text">
-        La data n’est pas seulement un ensemble de chiffres : c’est une langue silencieuse du monde moderne. 
-        Chaque dataset raconte une histoire que je m’efforce de comprendre et de traduire. 
-        Mon intérêt vient de cette capacité à transformer le chaos en clarté, les signaux en insights, 
-        et l’information en décisions éclairées.
-        <br><br><strong>— Elhadji CISSE</strong>
+        Analyste Data & BI, je suis <strong>Elhadji CISSE</strong>, spécialisé dans l’exploitation avancée des données, le Machine Learning, la Datavisualisation, la Programmation, la Migration et la gestion de bases de données, la Business Intelligence, la modélisation prédictive et l’automatisation des processus métier.
+        <br><br>
+        Passionné par la transformation de données brutes en informations actionnables, j’accompagne les organisations dans l’optimisation de leurs performances opérationnelles via des solutions d’analyse modernes, automatisées et fiables.
+      </p>
+    </div>
+
+    <!-- Storytelling full-width (parcours) -->
+    <section id="storytelling" class="animate" aria-label="Mon histoire en une ligne de code">
+      <h2>📜 Mon histoire en une ligne de code</h2>
+      <p class="justify-text">
+        Si je devais résumer mon parcours en une seule ligne de code, ce serait :
+        <strong><em>while (monde_donnees évolue) { apprendre(); analyser(); automatiser(); optimiser(); }</em></strong>
+        <br><br>
+        De mes débuts dans l’analyse agricole au sein de la SAED, où j’ai appris à transformer la terre et les chiffres en décisions concrètes, jusqu’à mes missions en enseignement supérieur, en logistique chez DHL, en environnement chez SUEZ et en consulting indépendant via MALT, une constante est restée :
+        <br><br>
+        transformer la complexité en clarté, et les systèmes imparfaits en solutions performantes.
+        <br><br>
+        Mon code raconte un chemin fait de migrations de données, de tableaux de bord à 133 KPI avec Power BI, d’automatisations sur Power Automate, Python, PowerShell et VBA, d’optimisations SQL, de data warehouses, de prédiction, de VM Azure, d’ODBC, de QGIS, de macros, de modèles ML et d’architectures BI.
+        <br><br>
+        Mais surtout, il raconte un développeur qui n’a jamais arrêté de boucler sur la même instruction :
+        <strong><em>devenir meilleur que la veille.</em></strong>
       </p>
     </section>
-
-    <section class="animate" id="projects-approach">
-      <h3>🛠 Mes projets et ma manière d’aborder un projet</h3>
-      <p class="justify-text">
-        Chaque projet que je crée est une expérience unique. J’aime partir d’une question, explorer les données,
-        tester des hypothèses et raconter une histoire avec les résultats. Mon objectif n’est pas seulement de produire
-        des analyses, mais de montrer ma façon de penser, ma créativité et ma capacité à résoudre des problèmes réels.
-        <br><br><strong>— Elhadji CISSE</strong>
-      </p>
-    </section>
-
-    <section class="animate" id="philosophy-values">
-      <h3>🌱 Ma philosophie et mes valeurs</h3>
-      <p class="justify-text">
-        Je crois que le travail le plus impactant naît de l’intention et de la rigueur. La curiosité, la précision,
-        la créativité et l’éthique guident chacun de mes projets. Ces valeurs déterminent la manière dont j’analyse,
-        construis et communique mes résultats.
-        <br><br><strong>— Elhadji CISSE</strong>
-      </p>
-    </section>
-
-  </div>
-
-
-
-<section id="data-vision-2">
-  <div class="sections-grid" style="grid-template-columns: repeat(2, 1fr); margin-top:25px;">
-
-    <section class="animate" id="vision-future">
-      <h3>🔭 Ma vision et vers où je veux aller</h3>
-      <p class="justify-text">
-        Je souhaite évoluer dans un univers où la data et l’IA coexistent avec l’intuition humaine. Mon objectif
-        est de contribuer à des solutions intelligentes, responsables et innovantes, tout en anticipant les
-        besoins futurs et en explorant de nouvelles manières de comprendre le monde.
-        <br><br><strong>— Elhadji CISSE</strong>
-      </p>
-    </section>
-
-    <section class="animate" id="future-ai">
-      <h3>🤖 Le futur de la data et de l’IA</h3>
-      <p class="justify-text">
-        L’IA ne remplacera pas les professionnels de la data, elle les augmentera. Les modèles génératifs
-        deviendront des partenaires qui nous permettront d’explorer des volumes et des complexités impossibles
-        à traiter seuls. L’avenir est une collaboration entre l’intuition humaine et la puissance de l’intelligence artificielle.
-        <br><br><strong>— Elhadji CISSE</strong>
-      </p>
-    </section>
-
-  </div>
-</section>
-
   </section>
 
-<section class="memoire">
- <h2>📘 Mémoire de Stage</h2>
-  </h4> Sujet : </strong>Développement d'Outils d'Analyse Automatisés en Business Intelligence</strong></h3></h4>
-  
-  <h4>Objectif</h4>
-  <ul>
-    <li>Automatiser l'analyse et le traitement des données opérationnelles d'ASTEO.</li>
-    <li>Développer des outils BI (Power BI, Power Automate, VBA, PowerShell).</li>
-    <li>Concevoir des tableaux de bord interactifs et rapports standardisés.</li>
-    <li>Améliorer les performances opérationnelles et répondre aux objectifs contractuels d'ASTEO.</li>
-  </ul>
-  
-  <h4>Contenu</h4>
-  <ul>
-    <li><strong>Mémoire complet :</strong> document privé (Memoire_Stage.pdf)</li>
-    <li><strong>README public :</strong> informations générales sur le projet et les travaux réalisés</li>
-  </ul>
-  
-  <h4>Technologies et outils utilisés</h4>
-  <div class="badges">
-    <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi" alt="Power BI">
-    <img src="https://img.shields.io/badge/Power_Automate-094AB2?style=for-the-badge&logo=microsoft-power-automate" alt="Power Automate">
-    <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau" alt="Tableau">
-    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql" alt="PostgreSQL">
-    <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server" alt="SQL Server">
-    <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql" alt="MySQL">
-    <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure" alt="Azure">
-    <img src="https://img.shields.io/badge/VBA-862633?style=for-the-badge" alt="VBA">
-    <img src="https://img.shields.io/badge/PowerShell-012456?style=for-the-badge&logo=powershell" alt="PowerShell">
-    <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel" alt="Excel">
-    <img src="https://img.shields.io/badge/SharePoint-0078D4?style=for-the-badge&logo=microsoft-sharepoint" alt="SharePoint">
-    <img src="https://img.shields.io/badge/Teams-6264A7?style=for-the-badge&logo=microsoft-teams" alt="Teams">
-  </div>
-  
-  <h4>Remarques</h4>
-  <ul>
-    <li>Les fichiers sources confidentiels d'ASTEO ne sont pas inclus pour respecter la confidentialité.</li>
-    <li>Le PDF du mémoire est privé et ne sera partagé qu'avec les personnes autorisées.</li>
-  </ul>
-  
-  <p><strong>Accéder au README public :</strong> <a href="https://github.com/el6464/data-portfolio/tree/main/M%C3%A9moire%20de%20stage/M%C3%A9moire" target="_blank">Cliquez ici</a></p>
+  <!-- COMPETENCES -->
+  <section id="competences" aria-label="Compétences">
+    <h2>💼 Compétences principales</h2>
 
-</section>
+    <h3>🧠 Data Analysis & Machine Learning</h3>
+    <div class="badges">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" alt="Python">
+      <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r" alt="R">
+      <img src="https://img.shields.io/badge/MATLAB-F0F0F0?style=for-the-badge&logo=matlab&logoColor=000000" alt="Matlab">
+      <img src="https://img.shields.io/badge/Scilab-1D5A99?style=for-the-badge" alt="Scilab">
+    </div>
+    <p><strong>Modélisation prédictive :</strong> Régression, Random Forest, SVM, K-means, LR, Neural Networks…</p>
 
-<section class="contact">
-  <h2>📫 Contact</h2>
-  <p>LinkedIn : <a href="http://www.linkedin.com/in/ecisse" target="_blank">linkedin.com/in/ecisse</a></p>
-  <p>Email : <a href="mailto:elmalick6c@gmail.com">elmalick6c@gmail.com</a></p>
-</section>
+    <h3>📊 Business Intelligence & Reporting</h3>
+    <div class="skills badges">
+      <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi">
+      <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau">
+      <img src="https://img.shields.io/badge/Qlik-74CBC4?style=for-the-badge&logo=qlik">
+      <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel">
+      <img src="https://img.shields.io/badge/Google_Analytics-FBBC05?style=for-the-badge&logo=google-analytics">
+      <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana">
+      <img src="https://img.shields.io/badge/DAX-0078D4?style=for-the-badge">
+      <img src="https://img.shields.io/badge/Power_Query-0078D4?style=for-the-badge">
+      <img src="https://img.shields.io/badge/Power_Pivot-0078D4?style=for-the-badge">
+    </div>
+
+    <h3>🗄 Bases de données & ETL</h3>
+    <div class="skills badges">
+      <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql">
+      <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql">
+      <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server">
+      <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb">
+      <img src="https://img.shields.io/badge/Microsoft_Access-A4373A?style=for-the-badge&logo=microsoft-access">
+      <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb">
+      <img src="https://img.shields.io/badge/SAP-0FAAFF?style=for-the-badge&logo=sap">
+      <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle">
+      <img src="https://img.shields.io/badge/Snowflake-28A0E5?style=for-the-badge&logo=snowflake">
+      <img src="https://img.shields.io/badge/Talend-FF6A00?style=for-the-badge">
+      <img src="https://img.shields.io/badge/Informatica-FF6C00?style=for-the-badge">
+      <img src="https://img.shields.io/badge/BigQuery-4285F4?style=for-the-badge&logo=google">
+    </div>
+
+    <h3>🗺 SIG & Statistiques</h3>
+    <div class="skills badges">
+      <img src="https://img.shields.io/badge/ArcGIS-F57F20?style=for-the-badge&logo=esri">
+      <img src="https://img.shields.io/badge/QGIS-589632?style=for-the-badge&logo=qgis">
+      <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=rstudio">
+      <img src="https://img.shields.io/badge/SAS-362E7B?style=for-the-badge&logo=sas">
+      <img src="https://img.shields.io/badge/Stata-1C4587?style=for-the-badge">
+      <img src="https://img.shields.io/badge/Scilab-1D5A99?style=for-the-badge">
+      <img src="https://img.shields.io/badge/Statistica-FF6600?style=for-the-badge">
+    </div>
+
+    <h3>☁️ Cloud & Automatisation</h3>
+    <div class="skills badges">
+      <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure">
+      <img src="https://img.shields.io/badge/Power_Apps-742774?style=for-the-badge&logo=microsoft-powerapps">
+      <img src="https://img.shields.io/badge/Power_Automate-094AB2?style=for-the-badge&logo=microsoft-power-automate">
+      <img src="https://img.shields.io/badge/BigQuery-4285F4?style=for-the-badge&logo=google">
+      <img src="https://img.shields.io/badge/ERP_SAS-003366?style=for-the-badge">
+      <img src="https://img.shields.io/badge/PowerShell-012456?style=for-the-badge&logo=powershell">
+      <img src="https://img.shields.io/badge/VBA-862633?style=for-the-badge">
+    </div>
+
+    <h3>🏗 Gestion de Projet & Collaboration</h3>
+    <div class="skills badges">
+      <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira">
+      <img src="https://img.shields.io/badge/Trello-0079BF?style=for-the-badge&logo=trello">
+      <img src="https://img.shields.io/badge/Microsoft_Teams-6264A7?style=for-the-badge&logo=microsoft-teams">
+      <img src="https://img.shields.io/badge/SharePoint-0078D4?style=for-the-badge&logo=microsoft-sharepoint">
+      <img src="https://img.shields.io/badge/GanttProject-FF6600?style=for-the-badge">
+    </div>
+
+    <h3>🔧 Gestion de version & Déploiement</h3>
+    <div class="skills badges">
+      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github">
+      <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab">
+    </div>
+  </section>
+
+  <!-- DATA & VISION (les sections conceptuelles) -->
+  <section id="data-vision" aria-label="Data et Vision">
+    <h2>🌐 Data & Vision</h2>
+
+    <div class="sections-grid" role="list">
+      <section class="animate" role="listitem" id="why-data">
+        <h3>💡 Pourquoi je m’intéresse à la data</h3>
+        <p class="justify-text">
+          La data n’est pas seulement un ensemble de chiffres : c’est une langue silencieuse du monde moderne.
+          Chaque dataset raconte une histoire que je m’efforce de comprendre et de traduire. Mon intérêt vient de cette capacité à transformer le chaos en clarté, les signaux en insights, et l’information en décisions éclairées.
+        </p>
+      </section>
+
+      <section class="animate" role="listitem" id="projects-approach">
+        <h3>🛠 Mes projets et ma manière d’aborder un projet</h3>
+        <p class="justify-text">
+          Chaque projet que je crée est une expérience unique. J’aime partir d’une question, explorer les données, tester des hypothèses et raconter une histoire avec les résultats. Mon objectif n’est pas seulement de produire des analyses, mais de montrer ma façon de penser, ma créativité et ma capacité à résoudre des problèmes réels.
+        </p>
+      </section>
+
+      <section class="animate" role="listitem" id="philosophy-values">
+        <h3>🌱 Ma philosophie et mes valeurs</h3>
+        <p class="justify-text">
+          Je crois que le travail le plus impactant naît de l’intention et de la rigueur. La curiosité, la précision, la créativité et l’éthique guident chacun de mes projets. Ces valeurs déterminent la manière dont j’analyse, construis et communique mes résultats.
+        </p>
+      </section>
+    </div>
+
+    <!-- Deuxième rangée (2 sections) -->
+    <div class="sections-grid" style="grid-template-columns: repeat(2, 1fr); margin-top:12px;">
+      <section class="animate" role="listitem" id="vision-future">
+        <h3>🔭 Ma vision et vers où je veux aller</h3>
+        <p class="justify-text">
+          Je souhaite évoluer dans un univers où la data et l’IA coexistent avec l’intuition humaine. Mon objectif est de contribuer à des solutions intelligentes, responsables et innovantes, tout en anticipant les besoins futurs et en explorant de nouvelles manières de comprendre le monde.
+        </p>
+      </section>
+
+      <section class="animate" role="listitem" id="future-ai">
+        <h3>🤖 Le futur de la data et de l’IA</h3>
+        <p class="justify-text">
+          L’IA ne remplacera pas les professionnels de la data, elle les augmentera. Les modèles génératifs deviendront des partenaires qui nous permettront d’explorer des volumes et des complexités impossibles à traiter seuls. L’avenir est une collaboration entre l’intuition humaine et la puissance de l’intelligence artificielle.
+        </p>
+      </section>
+    </div>
+  </section>
+
+  <!-- MES REALISATIONS : Projets + Mémoire -->
+  <section id="realisations" aria-label="Mes réalisations">
+    <h2>🗂 Mes réalisations</h2>
+
+    <h3>Projets</h3>
+    <div class="projects" aria-live="polite">
+      <div class="project-card"><h4>Python</h4><p>Scripts et notebooks pour analyses de données et modélisation prédictive.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Python" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>R</h4><p>Analyses statistiques et visualisations.</p><a href="https://github.com/el6464/data-portfolio/tree/main/R/" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>Matlab_Scilab</h4><p>Scripts et modèles scientifiques en Matlab et Scilab.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Matlab_Scilab/" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>SQL</h4><p>Scripts et requêtes pour bases de données MySQL et PostgreSQL.</p><a href="https://github.com/el6464/data-portfolio/tree/main/SQL" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>PostgreSQL</h4><p>Exemples de création et gestion de bases de données.</p><a href="https://github.com/el6464/data-portfolio/tree/main/PostgreSQL" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>MySQL</h4><p>Requêtes SQL et gestion de bases MySQL.</p><a href="https://github.com/el6464/data-portfolio/tree/main/MySQL" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>Power BI</h4><p>Dashboards interactifs avec analyses BI.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Power BI" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>Tableau</h4><p>Dashboards et visualisations avancées.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Tableau" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>Power Automates</h4><p>Automatisation des processus métiers.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Power Automates" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>PowerShell</h4><p>Scripts d’automatisation et gestion système.</p><a href="https://github.com/el6464/data-portfolio/tree/main/PowerShell" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>VBA</h4><p>Macros et automatisations Excel.</p><a href="https://github.com/el6464/data-portfolio/tree/main/VBA" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>Statistiques QGIS</h4><p>Analyses spatiales et cartographiques avec QGIS.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Statistiques QGIS" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>Data Warehouse & VM</h4><p>Architecture décisionnelle et machines virtuelles Azure.</p><a href="https://github.com/el6464/data-portfolio/tree/main/data%20warehouse%20et%20VM" target="_blank" rel="noopener">Accéder au projet</a></div>
+      <div class="project-card"><h4>WordPress</h4><p>Projets et développement sur WordPress.</p><a href="https://github.com/el6464/data-portfolio/tree/main/Wordpress" target="_blank" rel="noopener">Accéder au projet</a></div>
+    </div>
+
+    <h3 style="margin-top:1.5rem;">📘 Mémoire de Stage</h3>
+    <section class="memoire" aria-label="Mémoire de stage">
+      <h4>Sujet :</h4>
+      <p><strong>Développement d'Outils d'Analyse Automatisés en Business Intelligence</strong></p>
+
+      <h4>Objectif</h4>
+      <ul>
+        <li>Automatiser l'analyse et le traitement des données opérationnelles d'ASTEO.</li>
+        <li>Développer des outils BI (Power BI, Power Automate, VBA, PowerShell).</li>
+        <li>Concevoir des tableaux de bord interactifs et rapports standardisés.</li>
+        <li>Améliorer les performances opérationnelles et répondre aux objectifs contractuels d'ASTEO.</li>
+      </ul>
+
+      <h4>Contenu</h4>
+      <ul>
+        <li><strong>Mémoire complet :</strong> document privé (Memoire_Stage.pdf)</li>
+        <li><strong>README public :</strong> informations générales sur le projet et les travaux réalisés</li>
+      </ul>
+
+      <h4>Technologies et outils utilisés</h4>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi" alt="Power BI">
+        <img src="https://img.shields.io/badge/Power_Automate-094AB2?style=for-the-badge&logo=microsoft-power-automate" alt="Power Automate">
+        <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau" alt="Tableau">
+        <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql" alt="PostgreSQL">
+        <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server" alt="SQL Server">
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql" alt="MySQL">
+        <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure" alt="Azure">
+        <img src="https://img.shields.io/badge/VBA-862633?style=for-the-badge" alt="VBA">
+        <img src="https://img.shields.io/badge/PowerShell-012456?style=for-the-badge&logo=powershell" alt="PowerShell">
+        <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel" alt="Excel">
+        <img src="https://img.shields.io/badge/SharePoint-0078D4?style=for-the-badge&logo=microsoft-sharepoint" alt="SharePoint">
+        <img src="https://img.shields.io/badge/Teams-6264A7?style=for-the-badge&logo=microsoft-teams" alt="Teams">
+      </div>
+
+      <h4>Remarques</h4>
+      <ul>
+        <li>Les fichiers sources confidentiels d'ASTEO ne sont pas inclus pour respecter la confidentialité.</li>
+        <li>Le PDF du mémoire est privé et ne sera partagé qu'avec les personnes autorisées.</li>
+      </ul>
+
+      <p><strong>Accéder au README public :</strong> <a href="https://github.com/el6464/data-portfolio/tree/main/M%C3%A9moire%20de%20stage/M%C3%A9moire" target="_blank" rel="noopener">Cliquez ici</a></p>
+
+      <p><strong>Télécharger mon CV :</strong> <a href="/mnt/data/Mon CV bien.pdf" target="_blank" rel="noopener">Mon CV (PDF)</a></p>
+    </section>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" aria-label="Contact">
+    <h2>📫 Contact</h2>
+    <p>LinkedIn : <a href="http://www.linkedin.com/in/ecisse" target="_blank" rel="noopener">linkedin.com/in/ecisse</a></p>
+    <p>Email : <a href="mailto:elmalick6c@gmail.com">elmalick6c@gmail.com</a></p>
+  </section>
+
+</main>
 
 <script>
-// Animation au scroll : fade-in + slide-up
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
+  // Animation au scroll : fade-in + slide-up
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  },{ threshold: 0.18 });
+
+  document.querySelectorAll('.animate').forEach(section => {
+    observer.observe(section);
+  });
+  document.querySelectorAll('.sections-grid section').forEach(section => {
+    observer.observe(section);
+  });
+
+  // Bloquer le clic droit (protection basique)
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    // message discret pour l'utilisateur
+    // alert("Le copier-coller n'est pas autorisé sur ce site.");
+  });
+
+  // Bloquer Ctrl+C et Ctrl+X (protection basique)
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'x')) {
+      e.preventDefault();
     }
   });
-},{ threshold: 0.2 });
 
-document.querySelectorAll('.animate').forEach(section => {
-  observer.observe(section);
-});
-
-// Bloquer le clic droit
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-  alert("Le copier-coller n'est pas autorisé sur ce site.");
-});
-
-// Bloquer Ctrl+C et Ctrl+X
-document.addEventListener('keydown', function(e) {
-  if (e.ctrlKey && (e.key === 'c' || e.key === 'x')) {
-    e.preventDefault();
-    alert("Le copier-coller n'est pas autorisé sur ce site.");
-  }
-});
+  // Smooth scrolling for anchor links (nice UX)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // update focus for accessibility
+      target.setAttribute('tabindex','-1');
+      target.focus({preventScroll:true});
+    });
+  });
 </script>
 
 </body>
