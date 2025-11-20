@@ -5,6 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Data-portfolio — Elhadji CISSE</title>
 <style>
+  /* 📱 MOBILE & TABLETTE — Optimisation premium */
+@media(max-width: 992px) {
+  /* 3 sections -> 2 colonnes */
+  .sections-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+}
+
+@media(max-width: 768px) {
+  /* 3 sections + 2 sections : 1 colonne */
+  .sections-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Meilleure lisibilité sur mobile */
+  .sections-grid section {
+    padding: 18px !important;
+  }
+
+  /* Titres centrés */
+  .sections-grid section h3 {
+    text-align: center;
+    font-size: 1.05rem;
+  }
+
+  /* Texte légèrement réduit */
+  .sections-grid section p {
+    font-size: 0.95rem;
+  }
+
+  /* Réduction espace entre les groupes */
+  #data-vision-2 .sections-grid {
+    margin-top: 10px !important;
+  }
+
+  /* Section storytelling ajustée */
+  #storytelling {
+    padding: 25px !important;
+    margin: 1.5rem 0.8rem !important;
+  }
+}
+
+/* Très petits écrans (téléphones anciens) */
+@media(max-width: 480px) {
+  .sections-grid section {
+    padding: 15px !important;
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
   /* Reset & base */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { 
