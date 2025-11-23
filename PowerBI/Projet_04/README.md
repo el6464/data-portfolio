@@ -14,8 +14,8 @@ Surveiller le volume et l’évolution des données dans l’Entrepôt de Donné
 3. Suivi régulier des anomalies et doublons
 
 ## Captures d'écran
-![Requête PostgreSQL](screenshots/01_postgresql.png)
-![Tableau de bord Power BI](screenshots/02_powerbi.png)
+**Pour des raisons de confidentialité, les captures d’écran de ce projet ne sont pas publiées ici. Elles peuvent être fournies sur demande.**
+
 
 ## Résultat
 - Surveillance proactive des données
