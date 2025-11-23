@@ -30,3 +30,13 @@ Automatiser la gestion et le traitement des fichiers SharePoint afin de rational
 - Les rapports sont générés pour résumer les nouveaux documents sans intervention manuelle.
 - Les fichiers inactifs sont archivés et les processus d’approbation automatisés pour valider les modifications.
 - Intégration avec d’autres applications logicielles pour synchronisation et automatisation des processus métiers.
+
+  ## Captures d'écran  
+# Mon Projet PowerShell sur VM
+
+> **Pour des raisons de confidentialité, les captures d’écran de ce projet ne sont pas publiées ici. Elles peuvent être fournies sur demande.**
+
+<!--  
+Si tu souhaites montrer des captures, tu peux créer une version floutée ou basse résolution et héberger les images sur Cloudinary.  
+Ensuite, remplace ce message par des balises <img> avec les URLs adaptées.  
+-->
