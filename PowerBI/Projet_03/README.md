@@ -16,7 +16,8 @@ Créer une solution Power BI pour automatiser le diagnostic permanent (DIAG PERM
 4. Export standardisé des tableaux pour DIAG PERM 21
 
 ## Captures d'écran
-![Tableau de bord DIAG PERM](screenshots/01_diagperm.png)
+**Pour des raisons de confidentialité, les captures d’écran de ce projet ne sont pas publiées ici. Elles peuvent être fournies sur demande.**
+
 
 ## Résultat
 - Calcul automatisé et fiable des indicateurs
