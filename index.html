@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Data-portfolio — Elhadji CISSE</title>
 <style>
-  /* 📱 MOBILE & TABLETTE — Optimisation premium */
+
 @media(max-width: 992px) {
   /* 3 sections -> 2 colonnes */
   .sections-grid {
@@ -21,35 +21,35 @@
     gap: 18px !important;
   }
 
-  /* Meilleure lisibilité sur mobile */
+
   .sections-grid section {
     padding: 18px !important;
   }
 
-  /* Titres centrés */
+
   .sections-grid section h3 {
     text-align: center;
     font-size: 1.05rem;
   }
 
-  /* Texte légèrement réduit */
+
   .sections-grid section p {
     font-size: 0.95rem;
   }
 
-  /* Réduction espace entre les groupes */
+
   #data-vision-2 .sections-grid {
     margin-top: 10px !important;
   }
 
-  /* Section storytelling ajustée */
+
   #storytelling {
     padding: 25px !important;
     margin: 1.5rem 0.8rem !important;
   }
 }
 
-/* Très petits écrans (téléphones anciens) */
+
 @media(max-width: 480px) {
   .sections-grid section {
     padding: 15px !important;
@@ -64,7 +64,7 @@
   }
 }
 
-  /* Reset & base */
+ 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { 
     font-family: 'Segoe UI', Arial, sans-serif; 
@@ -84,7 +84,7 @@
   header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
   header p { font-size: 1.1rem; margin-bottom: 0.3rem; }
 
-  /* Sections de base */
+ 
   section { padding: 2rem 1rem; max-width: 1200px; margin: auto; }
   h2 { border-bottom: 3px solid #0078D4; padding-bottom: 0.5rem; margin-bottom: 1rem; }
   h3 { margin-top: 1rem; margin-bottom: 0.5rem; color: #0078D4; }
@@ -111,7 +111,7 @@
     h2 { font-size: 1.5rem; }
   }
 
-  /* === Sections Data & Vision : grille 3+3 avec animation === */
+
   .sections-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -493,7 +493,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.12);">
 </section>
 
 <script>
-// Animation au scroll : fade-in + slide-up
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -506,7 +506,7 @@ document.querySelectorAll('.animate').forEach(section => {
   observer.observe(section);
 });
 
-// Bloquer le clic droit
+
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
   alert("Le copier-coller n'est pas autorisé sur ce site.");
